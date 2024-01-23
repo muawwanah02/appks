@@ -31,7 +31,7 @@
                 <thead>
                     <tr>
                         <th width="50">No</th>
-                        <th>No KK</th>
+                        <th>Nomor KK</th>
                         <th>Kepala Keluarga</th>
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
