@@ -16,10 +16,11 @@
     <div class="col">
         <?php
         if (isset($_POST['simpan_button'])) {
+            $no_kk = $_POST['no_kk'];
             $kepala_keluarga = $_POST['kepala_keluarga'];
             $alamat = $_POST['alamat'];
             $nomor_telepon = $_POST['nomor_telepon'];
-            $checkSQL = "SELECT * FROM orang_tua WHERE kepala_keluarga = '$kepala_keluarga'";
+            $checkSQL = "SELECT * FROM orang_tua WHERE no_kk = '$no_kk'";
             $resultCheck = mysqli_query($koneksi, $checkSQL);
             $sudahAda = (mysqli_num_rows($resultCheck) > 0) ? true : false;
             if ($sudahAda) {
@@ -30,7 +31,7 @@
                 </div>
                 <?php
             } else {
-                $insertSQL = "INSERT INTO orang_tua SET kepala_keluarga='$kepala_keluarga', 
+                $insertSQL = "INSERT INTO orang_tua SET no_kk='$no_kk', kepala_keluarga='$kepala_keluarga', 
                 alamat='$alamat',
                 nomor_telepon='$nomor_telepon'";
                 $result = mysqli_query($koneksi, $insertSQL);
@@ -58,6 +59,10 @@
     <div class="col">
         <div class="card px-3 py-3">
             <form action="" method="post">
+                <div class="mb-3">
+                    <label for="no_kk">Nomor KK</label>
+                    <input type="text" class="form-control" name="no_kk" required>
+                </div>
                 <div class="mb-3">
                     <label for="kepala_keluarga">Kepala Keluarga</label>
                     <input type="text" class="form-control" name="kepala_keluarga" required>
