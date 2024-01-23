@@ -44,6 +44,7 @@
                     ?>
                         <tr class="align-middle">
                             <td><?= $row['id'] ?></td>
+                            <td><?= $row['no_kk'] ?></td>
                             <td><?= $row['kepala_keluarga'] ?></td>
                             <td><?= $row['alamat'] ?></td>
                             <td><?= $row['nomor_telepon'] ?></td>
