@@ -70,7 +70,7 @@
         <div class="card px-3 py-3">
             <form action="" method="post">
                 <div class="mb-3">
-                    <label for="id">ID</label>
+                    <label for="id">No</label>
                     <input type="text" class="form-control" name="id" value="<?= $row['id'] ?>" readonly>
                 </div>
                 <div class="mb-3">
