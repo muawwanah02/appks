@@ -37,7 +37,20 @@ switch ($page) {
     case "orangtuahapus":
         include "pages/orangtua/orangtuahapus.php";
         break;
-        
+
+    case "anakdata":
+        include "pages/anak/anakdata.php";
+        break;
+    case "anaktambah":
+        include "pages/anak/anaktambah.php";
+        break;
+    case "anakubah":
+        include "pages/anak/anakubah.php";
+        break;
+    case "anakhapus":
+        include "pages/anak/anakhapus.php";
+        break;
+
     case "pegawaidata":
         include "pages/pegawai/pegawaidata.php";
         break;
@@ -51,6 +64,31 @@ switch ($page) {
         include "pages/pegawai/pegawaihapus.php";
         break;
 
+    case "kasusstuntingdata":
+        include "pages/kasusstunting/kasusstuntingdata.php";
+        break;
+    case "kasusstuntingtambah":
+        include "pages/kasusstunting/kasusstuntingtambah.php";
+        break;
+    case "kasusstuntingubah":
+        include "pages/kasusstunting/kasusstuntingubah.php";
+        break;
+    case "kasusstuntinghapus":
+        include "pages/kasusstunting/kasusstuntinghapus.php";
+        break;
+
+    case "gizianakdata":
+        include "pages/gizianak/gizianakdata.php";
+        break;
+    case "gizianaktambah":
+        include "pages/gizianak/gizianaktambah.php";
+        break;
+    case "gizianakubah":
+        include "pages/gizianak/gizianakubah.php";
+        break;
+    case "gizianakhapus":
+        include "pages/gizianak/gizianakhapus.php";
+        break;
 
     case "ubahpassword":
         include "pages/ubahpassword.php";
