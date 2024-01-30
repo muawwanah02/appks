@@ -32,7 +32,7 @@
                     <tr>
                         <th width="50">ID</th>
                         <th>Nama Desa</th>
-                        <th>Nama Kecamata</th>
+                        <th>Nama Kecamatan</th>
                         <th width="200">Opsi</th>
                     </tr>
                 </thead>
