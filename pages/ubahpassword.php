@@ -21,13 +21,13 @@
             $password_baru = $_POST['password_baru'];
             $password_baru_ulangi = $_POST['password_baru_ulangi'];
 
-            $select = "SELECT * FROM karyawan WHERE id=$id AND password=MD5('$password_lama')";
+            $select = "SELECT * FROM pegawai WHERE id=$id AND password=MD5('$password_lama')";
             $result = mysqli_query($koneksi, $select);
             $ada = (mysqli_num_rows($result) > 0) ? true : false;
 
             if ($ada) {
                 if ($password_baru == $password_baru_ulangi) {
-                    $updateSQL = "UPDATE karyawan SET password=MD5('$password_baru') 
+                    $updateSQL = "UPDATE pegawai SET password=MD5('$password_baru') 
                     WHERE id=$id";
                     $result = mysqli_query($koneksi, $updateSQL);
                     if (!$result) {
@@ -62,8 +62,8 @@
             }
         }
 
-        $id = $_SESSION['karyawan_id'];
-        $select = "SELECT * FROM karyawan WHERE id = $id";
+        $id = $_SESSION['pegawai_id'];
+        $select = "SELECT * FROM pegawai WHERE id = $id";
         $result = mysqli_query($koneksi, $select);
         $row = mysqli_fetch_assoc($result);
 
