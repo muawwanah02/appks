@@ -3,7 +3,7 @@
     $menu = array(
         "dashboard" => "fw-bold",
         "kasusstunting" => "fw-bold",
-        "statuspemantauan" => "fw-bold",
+        "gizianak" => "fw-bold",
         "master" => "fw-bold",
     );
 
@@ -60,10 +60,10 @@
         case "kasusstuntingubah":
             $menu["kasusstunting"] = "active";
             break;
-        case "statuspemantauandata":
-        case "statuspemantauantambah":
-        case "statuspemantauanubah":
-            $menu["statuspemantauan"] = "active";
+        case "gizianakdata":
+        case "gizianaktambah":
+        case "gizianakubah":
+            $menu["gizianak"] = "active";
             break;
         default:
             include "pages/404.php";
@@ -75,7 +75,7 @@
      <div class="list-group list-group-flush my-3">
          <a href="index.php" class="list-group-item list-group-item-action bg-transparent abu-text  <?= $menu["dashboard"] ?>"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
          <a href="?page=kasusstuntingdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["kasusstunting"] ?>"><i class="fa-solid fa-triangle-exclamation me-2"></i>Kasus Stunting</a>
-         <a href="?page=statuspemantauandata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["statuspemantauan"] ?>"><i class="fa-solid fa-eye me-2"></i>Status Pemantauan</a>
+         <a href="?page=gizianakdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["gizianak"] ?>"><i class="fa-solid fa-weight-scale me-2"></i>Gizi Anak</a>
          <button class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["master"] ?>" data-bs-toggle="collapse" data-bs-target="#master-collapse" aria-expanded="true">
              <i class="fas fa-list me-2"></i>Master
          </button>
