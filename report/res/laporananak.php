@@ -79,7 +79,6 @@
         <col style="width: 20%">
         <col style="width: 20%">
         <col style="width: 10%">
-        <col style="width: 5%">
     </colgroup>
     <thead>
         <tr>
@@ -89,29 +88,20 @@
             <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
             <th>Umur</th>
-            <th>Qty</th>
         </tr>
     </thead>
     <tbody>
         <?php
         session_start();
-        $sql = "SELECT  YEAR(tanggal) tahun, MONTH(tanggal) bulan, A.id, A.nama_anak, COUNT(*) qty FROM anak A
-            LEFT JOIN kasus_stunting KS ON KS.anak_id = A.id
-            GROUP BY anak_id, tahun, bulan";
 
-        $sql = "SELECT YEAR(tanggal) tahun, A.id, A.nama_anak, COUNT(*) qty FROM anak A
-            LEFT JOIN kasus_stunting KS ON KS.anak_id = A.id
-            GROUP BY anak_id, tahun";
-
-        $sql = "SELECT A.*, O.no_kk, COUNT(*) qty FROM anak A
-        LEFT JOIN kasus_stunting KS ON KS.anak_id = A.id
-        LEFT JOIN orang_tua O ON A.orangtua_id = O.id
-        GROUP BY A.id";
-
+        $sql = "SELECT anak.*, orang_tua.no_kk FROM anak 
+        INNER JOIN orang_tua ON anak.orangtua_id = orang_tua.id";
+    
         $resultSet = mysqli_query($koneksi, $sql);
 
         $no = 1;
         while ($row = mysqli_fetch_assoc($resultSet)) {
+
 
         ?>
             <tr>
@@ -121,7 +111,6 @@
                 <td><?= $row['tanggal_lahir'] ?></td>
                 <td><?= $row['jenis_kelamin'] ?></td>
                 <td><?= $row['umur'] ?></td>
-                <td class="angka"><?= $row['qty'] ?></td>
             </tr>
         <?php
         }
