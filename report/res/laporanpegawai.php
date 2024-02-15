@@ -87,21 +87,21 @@
             <th>HP</th>
             <th>Alamat</th>
             <th>Email</th>
-            <th>Qty</th>
+            <th>Jumlah</th>
         </tr>
     </thead>
     <tbody>
         <?php
         session_start();
-        $sql = "SELECT  YEAR(tanggal) tahun, MONTH(tanggal) bulan, P.id, P.nama_pegawai, COUNT(*) qty FROM pegawai P
+        $sql = "SELECT  YEAR(tanggal) tahun, MONTH(tanggal) bulan, P.id, P.nama_pegawai, COUNT(KS.id) qty FROM pegawai P
             LEFT JOIN kasus_stunting KS ON KS.pegawai_id = P.id
             GROUP BY pegawai_id, tahun, bulan";
 
-        $sql = "SELECT YEAR(tanggal) tahun, P.id, P.nama_pegawai, COUNT(*) qty FROM pegawai P
+        $sql = "SELECT YEAR(tanggal) tahun, P.id, P.nama_pegawai, COUNT(KS.id) qty FROM pegawai P
             LEFT JOIN kasus_stunting KS ON KS.pegawai_id = P.id
             GROUP BY pegawai_id, tahun";
 
-        $sql = "SELECT P.*, COUNT(*) qty FROM pegawai P
+        $sql = "SELECT P.*, COUNT(KS.id) qty FROM pegawai P
             LEFT JOIN kasus_stunting KS ON KS.pegawai_id = P.id
             GROUP BY pegawai_id";
         $resultSet = mysqli_query($koneksi, $sql);
