@@ -32,7 +32,8 @@
                     <tr>
                         <th width="50">No</th>
                         <th>Nomor KK</th>
-                        <th>Kepala Keluarga</th>
+                        <th>Nama Ayah</th>
+                        <th>Nama Ibu</th>
                         <th>Alamat</th>
                         <th>Nomor Telepon</th>
                         <th width="200">Opsi</th>
@@ -45,7 +46,8 @@
                         <tr class="align-middle">
                             <td><?= $row['id'] ?></td>
                             <td><?= $row['no_kk'] ?></td>
-                            <td><?= $row['kepala_keluarga'] ?></td>
+                            <td><?= $row['nama_ayah'] ?></td>
+                            <td><?= $row['nama_ibu'] ?></td>
                             <td><?= $row['alamat'] ?></td>
                             <td><?= $row['nomor_telepon'] ?></td>
                             <td>
