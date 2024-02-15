@@ -74,34 +74,31 @@
 <table>
     <colgroup>
         <col style="width: 5%" class="angka">
-        <col style="width: 30%">
-        <col style="width: 30%">
-        <col style="width: 25%">
-        <col style="width: 10%">
+        <col style="width: 15%">
+        <col style="width: 18%">
+        <col style="width: 18%">
+        <col style="width: 20%">
+        <col style="width: 15%">
+        <col style="width: 8%">
     </colgroup>
     <thead>
         <tr>
             <th>No</th>
-            <th>Kepala Keluarga</th>
+            <th>No KK</th>
+            <th>Nama Ayah</th>
+            <th>Nama Ibu</th>
             <th>Alamat</th>
             <th>Nomor Telepon</th>
-            <th>Qty</th>
+            <th>Jumlah</th>
         </tr>
     </thead>
     <tbody>
         <?php
         session_start();
-        $sql = "SELECT  YEAR(tanggal) tahun, MONTH(tanggal) bulan, O.id, O.kepala_keluarga, COUNT(*) qty FROM orang_tua O
-            LEFT JOIN anak A ON A.orangtua_id = O.id
-            GROUP BY orangtua_id, tahun, bulan";
+        $sql = "SELECT  O.*, COUNT(A.id) as qty FROM orang_tua O
+        LEFT JOIN anak A ON A.orangtua_id = O.id
+        GROUP BY O.id";
 
-        $sql = "SELECT  YEAR(tanggal) tahun, O.id, O.kepala_keluarga, COUNT(*) qty FROM orang_tua O
-            LEFT JOIN anak A ON A.orangtua_id = O.id
-            GROUP BY orangtua_id, tahun";
-
-        $sql = "SELECT  O.*, COUNT(*) qty FROM orang_tua O
-            LEFT JOIN anak A ON A.orangtua_id = O.id
-            GROUP BY orangtua_id";
         $resultSet = mysqli_query($koneksi, $sql);
 
         $no = 1;
@@ -110,7 +107,9 @@
         ?>
             <tr>
                 <td><?= $no++ ?></td>
-                <td><?= $row['kepala_keluarga'] ?></td>
+                <td><?= $row['no_kk'] ?></td>
+                <td><?= $row['nama_ayah'] ?></td>
+                <td><?= $row['nama_ibu'] ?></td>
                 <td><?= $row['alamat'] ?></td>
                 <td><?= $row['nomor_telepon'] ?></td>
                 <td class="angka"><?= $row['qty'] ?></td>
