@@ -17,11 +17,12 @@
         <?php
         if (isset($_POST['simpan_button'])) {
             $orangtua_id = $_POST['orangtua_id'];
+            $nama_anak = $_POST['nama_anak'];
             $tanggal_lahir = $_POST['tanggal_lahir'];
             $jenis_kelamin = $_POST['jenis_kelamin'];
             $umur = $_POST['umur'];
 
-            $insertSQL = "INSERT INTO anak SET orangtua_id='$orangtua_id', tanggal_lahir='$tanggal_lahir', 
+            $insertSQL = "INSERT INTO anak SET orangtua_id='$orangtua_id', nama_anak='$nama_anak',tanggal_lahir='$tanggal_lahir', 
             jenis_kelamin='$jenis_kelamin', umur='$umur'";
             $result = mysqli_query($koneksi, $insertSQL);
             if (!$result) {
