@@ -83,23 +83,15 @@
             <th>No</th>
             <th>Nama Desa</th>
             <th>Nama Kecamatan</th>
-            <th>Qty</th>
+            <th>Jumlah</th>
         </tr>
     </thead>
     <tbody>
         <?php
         session_start();
-        $sql = "SELECT  YEAR(tanggal) tahun, MONTH(tanggal) bulan, D.id, D.nama_desa, COUNT(*) qty FROM desa D
-            LEFT JOIN kasus_stunting KS ON KS.desa_id = P.id
-            GROUP BY desa_id, tahun, bulan";
-
-        $sql = "SELECT  YEAR(tanggal) tahun, D.id, D.nama_desa, COUNT(*) qty FROM desa D
-            LEFT JOIN kasus_stunting KS ON KS.desa_id = D.id
-            GROUP BY desa_id, tahun";
-
-        $sql = "SELECT  D.*, COUNT(*) qty FROM desa D
-            LEFT JOIN kasus_stunting KS ON KS.desa_id = D.id
-            GROUP BY desa_id";
+        $sql = "SELECT  D.*, COUNT(KS.id) as qty FROM desa D
+        LEFT JOIN kasus_stunting KS ON KS.desa_id = D.id
+        GROUP BY D.id";
         $resultSet = mysqli_query($koneksi, $sql);
 
         $no = 1;
