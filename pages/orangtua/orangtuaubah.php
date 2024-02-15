@@ -17,10 +17,12 @@
         <?php
         if (isset($_POST['simpan_button'])) {
             $id = $_POST['id'];
-            $kepala_keluarga = $_POST['kepala_keluarga'];
+            $no_kk = $_POST['no_kk'];
+            $nama_ayah = $_POST['nama_ayah'];
+            $nama_ibu = $_POST['nama_ibu'];
             $alamat = $_POST['alamat'];
             $nomor_telepon = $_POST['nomor_telepon'];
-            $checkSQL = "SELECT * FROM orang_tua WHERE kepala_keluarga = '$kepala_keluarga' AND id!=$id";
+            $checkSQL = "SELECT * FROM orang_tua WHERE no_kk = '$no_kk' AND id!=$id";
             $resultCheck = mysqli_query($koneksi, $checkSQL);
             $sudahAda = (mysqli_num_rows($resultCheck) > 0) ? true : false;
             if ($sudahAda) {
@@ -31,7 +33,9 @@
                 </div>
                 <?php
             } else {
-                $updateSQL = "UPDATE orang_tua SET kepala_keluarga='$kepala_keluarga', 
+                $updateSQL = "UPDATE orang_tua SET no_kk='$no_kk',
+                nama_ayah='$nama_ayah',
+                nama_ibu='$nama_ibu', 
                 alamat='$alamat',
                 nomor_telepon='$nomor_telepon'
                 WHERE id=$id";
@@ -74,8 +78,16 @@
                     <input type="text" class="form-control" name="id" value="<?= $row['id'] ?>" readonly>
                 </div>
                 <div class="mb-3">
-                    <label for="kepala_keluarga">Kepala Keluarga</label>
-                    <input type="text" class="form-control" name="kepala_keluarga" value="<?= $row['kepala_keluarga'] ?>" required>
+                    <label for="no_kk">No KK</label>
+                    <input type="text" class="form-control" name="no_kk" value="<?= $row['no_kk'] ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nama_ayah">Nama Ayah</label>
+                    <input type="text" class="form-control" name="nama_ayah" value="<?= $row['nama_ayah'] ?>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="nama_ibu">Nama Ibu</label>
+                    <input type="text" class="form-control" name="nama_ibu" value="<?= $row['nama_ibu'] ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="alamat">Alamat</label>
