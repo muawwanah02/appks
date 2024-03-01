@@ -12,8 +12,6 @@ $pegawai_qty = hitungQty($koneksi, "pegawai");
 $orang_tua_qty = hitungQty($koneksi, "orang_tua");
 $anak_qty = hitungQty($koneksi, "anak");
 $desa_qty = hitungQty($koneksi, "desa");
-$gizi_anak_qty = hitungQty($koneksi, "gizi_anak");
-$kasus_stunting_qty = hitungQty($koneksi, "kasus_stunting");
 
 ?>
 <div id="badges" class="row g-3 my-2">
@@ -54,32 +52,12 @@ $kasus_stunting_qty = hitungQty($koneksi, "kasus_stunting");
     </div>
 
     <div class="col-md-6 col-lg-3">
-        <div class="p-3 bg-dark shadow-sm d-flex justify-content-around align-items-center rounded">
+        <div class="p-3 bg-info shadow-sm d-flex justify-content-around align-items-center rounded">
             <div>
                 <h3 class="fs-2"><?= $desa_qty ?></h3>
                 <p class="fs-5 text-white">Desa</p>
             </div>
-            <i class="fa-solid fa-city fs-1 text-white bg-dark p-3"></i>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <div class="p-3 bg-info shadow-sm d-flex justify-content-around align-items-center rounded">
-            <div>
-                <h3 class="fs-2"><?= $gizi_anak_qty ?></h3>
-                <p class="fs-5 text-white">Gizi Anak</p>
-            </div>
-            <i class="fa-solid fa-weight-scale fs-1 text-white bg-info p-3"></i>
-        </div>
-    </div>
-
-    <div class="col-md-6 col-lg-3">
-        <div class="p-3 bg-danger shadow-sm d-flex justify-content-around align-items-center rounded">
-            <div>
-                <h3 class="fs-2"><?= $kasus_stunting_qty ?></h3>
-                <p class="fs-5 text-white">Kasus Stunting</p>
-            </div>
-            <i class="fa-solid fa-triangle-exclamation fs-1 text-white bg-danger p-3"></i>
+            <i class="fa-solid fa-city fs-1 text-white bg-info p-3"></i>
         </div>
     </div>
 </div>
