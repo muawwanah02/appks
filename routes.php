@@ -90,6 +90,31 @@ switch ($page) {
         include "pages/gizianak/gizianakhapus.php";
         break;
 
+    case "perkembanganstuntingdata":
+        include "pages/perkembanganstunting/perkembanganstuntingdata.php";
+        break;
+    case "perkembanganstuntingtambah":
+        include "pages/perkembanganstunting/perkembanganstuntingtambah.php";
+        break;
+    case "perkembanganstuntingubah":
+        include "pages/perkembanganstunting/perkembanganstuntingubah.php";
+        break;
+    case "perkembanganstuntinghapus":
+        include "pages/perkembanganstunting/perkembanganstuntinghapus.php";
+        break;
+
+    case "perkembangangizidata":
+        include "pages/perkembangangizi/perkembangangizidata.php";
+        break;
+    case "perkembangangizitambah":
+        include "pages/perkembangangizi/perkembangangizitambah.php";
+        break;
+    case "perkembangangiziubah":
+        include "pages/perkembangangizi/perkembangangiziubah.php";
+        break;
+    case "perkembangangizihapus":
+        include "pages/perkembangangizi/perkembangangizihapus.php";
+        break;
     case "ubahpassword":
         include "pages/ubahpassword.php";
         break;
