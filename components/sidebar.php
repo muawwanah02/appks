@@ -8,6 +8,8 @@
         "anak" => "fw-bold",
         "pegawai" => "fw-bold",
         "desa" => "fw-bold",
+        "perkembanganstunting" => "fw-bold",
+        "perkembangangizi" => "fw-bold",
     );
 
     $page = (isset($_GET["page"])) ? $_GET["page"] : $page = "";
@@ -49,6 +51,16 @@
         case "kasusstuntingubah":
             $menu["kasusstunting"] = "active";
             break;
+        case "perkembanganstuntingdata":
+        case "perkembanganstuntingtambah":
+        case "perkembanganstuntingubah":
+            $menu["perkembanganstunting"] = "active";
+            break;
+        case "perkembangangizidata":
+        case "perkembangangizitambah":
+        case "perkembangangiziubah":
+            $menu["perkembangangizi"] = "active";
+            break;
         default:
             include "pages/404.php";
     }
@@ -69,7 +81,9 @@
          <a href="?page=anakdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["anak"] ?>"><i class="fa-solid fa-children me-2"></i>Data Anak</a>
          <a href="?page=desadata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["desa"] ?>"><i class="fa-solid fa-city me-2"></i>Data Desa</a>
          <a href="?page=gizianakdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["gizianak"] ?>"><i class="fa-solid fa-weight-scale me-2"></i>Data Gizi Anak</a>
+         <a href="?page=perkembangangizidata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["perkembangangizi"] ?>"><i class="fa-solid fa-weight-scale me-2"></i>Perkembangan Gizi Anak</a>
          <a href="?page=kasusstuntingdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["kasusstunting"] ?>"><i class="fa-solid fa-triangle-exclamation me-2"></i>Data Kasus Stunting</a>
+         <a href="?page=perkembanganstuntingdata" class="list-group-item list-group-item-action bg-transparent abu-text <?= $menu["perkembanganstunting"] ?>"><i class="fa-solid fa-triangle-exclamation me-2"></i>Perkembangan Kasus Stunting</a>
          <form action="" method="post">
              <button name="logout_button" type="submit" onclick="javascript: return confirm('Yakin keluar?');" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
                  <i class="fas fa-power-off me-2"></i>Logout
