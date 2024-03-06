@@ -89,9 +89,8 @@
     <tbody>
         <?php
         session_start();
-        $sql = "SELECT  D.*, COUNT(KS.id) as qty FROM desa D
-        LEFT JOIN kasus_stunting KS ON KS.desa_id = D.id
-        GROUP BY D.id";
+        $sql = "SELECT  D.*, (SELECT COUNT(*) FROM anak A WHERE A.desa_id = D.id) as qty 
+        FROM desa D";
         $resultSet = mysqli_query($koneksi, $sql);
 
         $no = 1;
